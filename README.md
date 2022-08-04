@@ -6,8 +6,6 @@
 
 Written in HTML, CSS and Javascript I wrote Pickly to be as efficient as possible, requiring no back-end processing.
 
-I am using CS50's codespace to host the website for the purpose of demonstration.
-
 In the head of the HTML I have made sure to include the unicode character set and set the viewport to adjust to the device width.
 
 Also in the head I've linked to Bootstrap's Javascript and CSS modules, as well as my own CSS File.
