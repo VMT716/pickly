@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--The head or "brain" of the HTML-->
+    <head>
+
+        <!--Establish unicode character set and make app resize for mobile-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Link Bootstrap's Javascript-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+        <!--Link Bootstrap's CSS-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+        <!--Link my CSS file-->
+        <link href="styles.css" rel="stylesheet">
+    </head>
+
+      <!--The body of the app-->
+    <body>
+
+      <!--Navbar-->
+      <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/assets/logo.svg" alt="" width="30" height="30" class="d-inline-block align-text-top">
+            pickly
+          </a>
+        </div>
+      </nav>
+
+      <div class="header">
+        <h3>In a pickle?<br>Having trouble making a decision?</h3><br>
+        <h1>Let pickly pick for you</h1>
+      </div>
+
+      <!--Container for the main body of the site-->
+      <div class="container">
+
+        <!--Div for input textbox-->
+      <div class="input-group mb-3 section">
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="userinput">
+          <button type="button" class="btn btn-outline-secondary" id="add">Add Choice</button>
+      </div>
+
+      <!--Div for list display-->
+      <div class="section">
+        <ul class="list-group">
+          <li class="list-group-item" id="choices"></li>
+        </ul>
+      </div>
+
+      <!--Div for choose button-->
+      <div class="button">
+        <button type="button" class="btn btn-outline-secondary" id="reset">Reset</button>
+        <button type="button" class="btn btn-outline-secondary" id="choose">Choose!</button>
+      </div>
+
+      </div>
+
+      <footer class="mt-auto">
+        <br>
+        A CS50 Final Project by Vincent Tamburrino
+        <br>
+        <br>
+      </div>
+
+      <!--Javascript functions-->
+      <script>
+        // Establish array variable
+        var inputlist = [];
+
+        // On click, execute function to gather input, store inside the array and display in list
+        document.querySelector('#add').addEventListener('click', function() {
+        var input = document.querySelector('input');
+        if (input.value.trim() == ""){
+          alert ("Error: Blank choice");
+        }
+        else {
+        inputlist.push(input.value);
+        document.getElementById('choices').innerHTML = inputlist.join("<br>");
+        document.getElementById('userinput').value = "";
+        }
+        });
+
+        // On click, execute function to clear the array
+        document.querySelector('#reset').addEventListener('click', function() {
+        inputlist = [];
+        document.getElementById('choices').innerHTML = inputlist;
+        });
+
+        // Error checking function to ensure user provides at least 1 choice
+        document.querySelector('#choose').addEventListener('click', function() {
+          if (inputlist.length < 1){
+            alert("Please add a choice first");
+          }
+          else {
+        // Make a choice
+        var randomItem = inputlist[Math.floor(Math.random()*inputlist.length)];
+        document.getElementById('choices').innerHTML = randomItem;
+          }
+        });
+  </script>
+      </body>
+</html>

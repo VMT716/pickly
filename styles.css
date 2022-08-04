@@ -1,0 +1,52 @@
+.bg-light {
+    background-color: #548235 !important;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+body {
+    background-image: linear-gradient(45deg, #a9d18e 25%, #c5e0b4 25%, #c5e0b4 50%, #a9d18e 50%, #a9d18e 75%, #c5e0b4 75%, #c5e0b4 100%);
+    background-size: 143px 143px;
+}
+
+.header {
+    height: auto;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-radius: 30px;
+    background-color: #548235;
+    box-shadow: 0 8px 8px -4px rgb(0, 0, 0, 0.2);
+    text-align: center;
+    color: white;
+    padding: 25px;
+}
+
+.container {
+    text-align: center;
+    padding: 25px;
+    width: 75%;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255, .9);
+    box-shadow: 0 8px 8px -4px rgb(0, 0, 0, 0.2);
+}
+
+.section {
+    margin-top: 50px;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.mt-auto {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(169, 209, 142, .5);
+}
+
